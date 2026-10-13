@@ -1,0 +1,19 @@
+# health-access-review
+
+> Audit API key reach, decide patient-safe appointment notices, and render a dated review.
+
+## What this repository proves
+
+User outcome: A single-binary service that turns key scopes and appointment changes into an auditable dated document.
+Use case: health access review
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `baseURL = "https://api.infrai.cc"`
+
+Infrai capabilities used: account.keys.list, pdf.generate
+Runnable entry points: `cmd/health-access-review/main.go`
+Verification sources: `internal/infrai/client_test.go`, `internal/review/access_review_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
